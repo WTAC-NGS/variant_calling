@@ -1049,7 +1049,7 @@ Start IGV by typing:
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-igv
+igv \&
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -1065,6 +1065,7 @@ GRCm38, which is the current mouse assembly (reference genome)}
     \hypertarget{load-the-alignment}{%
 \subsection{Load the alignment}\label{load-the-alignment}}
 
+Index the A\_J.bam file.
 Load the alignment file for the sample A\_J (A\_J.bam).
 
 \textbf{Go to ' \textit{File -\textgreater{} Load from File\ldots{}} `.
@@ -1085,7 +1086,7 @@ and inspect the SNP at position 10001946.
 \textbf{Q2:} Was this SNP called by bcftools?
 
 \textbf{Hint} Use
-\texttt{bcftools\ view\ -H\ -r\ chr19:10001946\ multi.filt.bcf} to
+\texttt{bcftools\ view\ -H\ -r\ 19:10001946\ multi.filt.bcf} to
 verify
 
 \textbf{Q3:} Did this SNP pass the filters?
@@ -1149,8 +1150,8 @@ bcftools view \PYZhy{}i \PY{l+s+s1}{\PYZsq{}FILTER=\PYZdq{}PASS\PYZdq{}\PYZsq{}}
 \end{Verbatim}
 \end{tcolorbox}
 
-    The command takes VCF as input, the \texttt{-f} option specifies the
-reference file that the data was aligned too and the \texttt{-g} option
+    The command takes BCF as input, the \texttt{-f} option specifies the
+reference file that the data was aligned to and the \texttt{-g} option
 specifies the GFF file that contains the gene models for the reference.
 Because our data is not phased, we provide the \texttt{-p} option (which
 does not actually phase the data, but tells the program to make an
